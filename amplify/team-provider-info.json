@@ -1,0 +1,36 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-gcv8zcm-dev-154218-authRole",
+      "UnauthRoleArn": "arn:aws:iam::536619631773:role/amplify-gcv8zcm-dev-154218-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::536619631773:role/amplify-gcv8zcm-dev-154218-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-gcv8zcm-dev-154218-deployment",
+      "UnauthRoleName": "amplify-gcv8zcm-dev-154218-unauthRole",
+      "StackName": "amplify-gcv8zcm-dev-154218",
+      "StackId": "arn:aws:cloudformation:us-west-2:536619631773:stack/amplify-gcv8zcm-dev-154218/820b70f0-4a5b-11ec-acc2-0a7f5b70ccef",
+      "AmplifyAppId": "d3fkc2zh7enaxh",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-gcv8zcm-dev-154218-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "gcv8zcm25cf57f6": {}
+      },
+      "function": {
+        "gcv8zcm25cf57f6DefineAuthChallenge": {
+          "deploymentBucketName": "amplify-gcv8zcm-dev-154218-deployment",
+          "s3Key": "amplify-builds/gcv8zcm25cf57f6DefineAuthChallenge-4934336b6539336c6a49-build.zip"
+        },
+        "gcv8zcm25cf57f6CreateAuthChallenge": {
+          "deploymentBucketName": "amplify-gcv8zcm-dev-154218-deployment",
+          "s3Key": "amplify-builds/gcv8zcm25cf57f6CreateAuthChallenge-5057716b784c6b6b5248-build.zip"
+        },
+        "gcv8zcm25cf57f6VerifyAuthChallengeResponse": {
+          "RECAPTCHASECRET": "",
+          "deploymentBucketName": "amplify-gcv8zcm-dev-154218-deployment",
+          "s3Key": "amplify-builds/gcv8zcm25cf57f6VerifyAuthChallengeResponse-456f724d417038446533-build.zip"
+        }
+      }
+    }
+  }
+}

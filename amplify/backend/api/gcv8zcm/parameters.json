@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "gcv8zcm",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authgcv8zcm25cf57f6",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+{
+    "UserAgent": "aws-amplify/cli",
+    "Version": "0.1.0",
+    "IdentityManager": {
+        "Default": {}
+    },
+    "CredentialsProvider": {
+        "CognitoIdentity": {
+            "Default": {
+                "PoolId": "us-west-2:fc2b7353-28f6-4d22-9e2d-3b41a88bad21",
+                "Region": "us-west-2"
+            }
+        }
+    },
+    "CognitoUserPool": {
+        "Default": {
+            "PoolId": "us-west-2_YS2tpxVx5",
+            "AppClientId": "i0qae144jktgft3k7o803gaq0",
+            "Region": "us-west-2"
+        }
+    },
+    "Auth": {
+        "Default": {
+            "OAuth": {
+                "WebDomain": "gcv8zcm25cf57f6-25cf57f6-dev.auth.us-west-2.amazoncognito.com",
+                "AppClientId": "i0qae144jktgft3k7o803gaq0",
+                "SignInRedirectURI": "GC://",
+                "SignOutRedirectURI": "GC://",
+                "Scopes": [
+                    "phone",
+                    "email",
+                    "openid",
+                    "profile",
+                    "aws.cognito.signin.user.admin"
+                ]
+            },
+            "authenticationFlowType": "CUSTOM_AUTH",
+            "socialProviders": [],
+            "usernameAttributes": [
+                "EMAIL"
+            ],
+            "signupAttributes": [
+                "ADDRESS",
+                "NAME",
+                "PHONE_NUMBER"
+            ],
+            "passwordProtectionSettings": {
+                "passwordPolicyMinLength": 8,
+                "passwordPolicyCharacters": []
+            },
+            "mfaConfiguration": "OFF",
+            "mfaTypes": [
+                "SMS"
+            ],
+            "verificationMechanisms": [
+                "EMAIL"
+            ]
+        }
+    },
+    "AppSync": {
+        "Default": {
+            "ApiUrl": "https://4vhvb2meojc7pa4a24swan2qky.appsync-api.us-west-2.amazonaws.com/graphql",
+            "Region": "us-west-2",
+            "AuthMode": "API_KEY",
+            "ApiKey": "da2-mvssh3m3rbgl7fcasutmvezwai",
+            "ClientDatabasePrefix": "gcv8zcm_API_KEY"
+        },
+        "gcv8zcm_AMAZON_COGNITO_USER_POOLS": {
+            "ApiUrl": "https://4vhvb2meojc7pa4a24swan2qky.appsync-api.us-west-2.amazonaws.com/graphql",
+            "Region": "us-west-2",
+            "AuthMode": "AMAZON_COGNITO_USER_POOLS",
+            "ClientDatabasePrefix": "gcv8zcm_AMAZON_COGNITO_USER_POOLS"
+        }
+    }
+}

@@ -1,0 +1,159 @@
+type CardData @aws_cognito_user_pools {
+  id: ID!
+  name: String!
+  balance: String!
+  image: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelCardDataConnection @aws_cognito_user_pools {
+  items: [CardData!]!
+  nextToken: String
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+input ModelCardDataFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  balance: ModelStringInput
+  image: ModelStringInput
+  and: [ModelCardDataFilterInput]
+  or: [ModelCardDataFilterInput]
+  not: ModelCardDataFilterInput
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+type Query {
+  getCardData(id: ID!): CardData @aws_cognito_user_pools
+  listCardDatas(filter: ModelCardDataFilterInput, limit: Int, nextToken: String): ModelCardDataConnection @aws_cognito_user_pools
+}
+
+input CreateCardDataInput {
+  id: ID
+  name: String!
+  balance: String!
+  image: String
+}
+
+input UpdateCardDataInput {
+  id: ID!
+  name: String
+  balance: String
+  image: String
+}
+
+input DeleteCardDataInput {
+  id: ID!
+}
+
+type Mutation {
+  createCardData(input: CreateCardDataInput!, condition: ModelCardDataConditionInput): CardData @aws_cognito_user_pools
+  updateCardData(input: UpdateCardDataInput!, condition: ModelCardDataConditionInput): CardData @aws_cognito_user_pools
+  deleteCardData(input: DeleteCardDataInput!, condition: ModelCardDataConditionInput): CardData @aws_cognito_user_pools
+}
+
+input ModelCardDataConditionInput {
+  name: ModelStringInput
+  balance: ModelStringInput
+  image: ModelStringInput
+  and: [ModelCardDataConditionInput]
+  or: [ModelCardDataConditionInput]
+  not: ModelCardDataConditionInput
+}
+
+type Subscription {
+  onCreateCardData(owner: String!): CardData @aws_subscribe(mutations: ["createCardData"]) @aws_cognito_user_pools
+  onUpdateCardData(owner: String!): CardData @aws_subscribe(mutations: ["updateCardData"]) @aws_cognito_user_pools
+  onDeleteCardData(owner: String!): CardData @aws_subscribe(mutations: ["deleteCardData"]) @aws_cognito_user_pools
+}

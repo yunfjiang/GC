@@ -1,0 +1,8 @@
+type CardData
+@model
+@auth (rules: [ {allow: owner } ]) {
+  id: ID!
+  name: String!
+  balance: String!
+  image: String
+}

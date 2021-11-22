@@ -1,0 +1,14 @@
+{
+    "CreateAPIKey": 1,
+    "AppSyncApiName": "gcv8zcm",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authgcv8zcm25cf57f6",
+            "Outputs.UserPoolId"
+        ]
+    },
+    "S3DeploymentBucket": "amplify-gcv8zcm-dev-154218-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/ec3a1b2461b01d57d2b13f5cedd0820b7c5a4234"
+}
