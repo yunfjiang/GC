@@ -30,7 +30,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-gcv8zcm-dev-154218-deployment/amplify-cfn-templates/function/gcv8zcm25cf57f6DefineAuthChallenge-cloudformation-template.json",
         "logicalId": "functiongcv8zcm25cf57f6DefineAuthChallenge"
       },
-      "lastPushTimeStamp": "2021-11-22T03:00:36.291Z",
+      "lastPushTimeStamp": "2021-11-22T05:55:18.762Z",
       "output": {
         "Region": "us-west-2",
         "Arn": "arn:aws:lambda:us-west-2:536619631773:function:gcv8zcm25cf57f6DefineAuthChallenge-dev",
@@ -55,7 +55,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-gcv8zcm-dev-154218-deployment/amplify-cfn-templates/function/gcv8zcm25cf57f6CreateAuthChallenge-cloudformation-template.json",
         "logicalId": "functiongcv8zcm25cf57f6CreateAuthChallenge"
       },
-      "lastPushTimeStamp": "2021-11-22T03:00:36.292Z",
+      "lastPushTimeStamp": "2021-11-22T05:55:18.764Z",
       "output": {
         "Region": "us-west-2",
         "Arn": "arn:aws:lambda:us-west-2:536619631773:function:gcv8zcm25cf57f6CreateAuthChallenge-dev",
@@ -80,7 +80,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-gcv8zcm-dev-154218-deployment/amplify-cfn-templates/function/gcv8zcm25cf57f6VerifyAuthChallengeResponse-cloudformation-template.json",
         "logicalId": "functiongcv8zcm25cf57f6VerifyAuthChallengeResponse"
       },
-      "lastPushTimeStamp": "2021-11-22T03:00:36.294Z",
+      "lastPushTimeStamp": "2021-11-22T05:55:18.766Z",
       "output": {
         "Region": "us-west-2",
         "Arn": "arn:aws:lambda:us-west-2:536619631773:function:gcv8zcm25cf57f6VerifyAuthChallengeResponse-dev",
@@ -150,7 +150,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-gcv8zcm-dev-154218-deployment/amplify-cfn-templates/auth/gcv8zcm25cf57f6-cloudformation-template.json",
         "logicalId": "authgcv8zcm25cf57f6"
       },
-      "lastPushTimeStamp": "2021-11-22T03:00:36.295Z",
+      "lastPushTimeStamp": "2021-11-22T05:55:18.767Z",
       "output": {
         "CreatedSNSRole": "arn:aws:iam::536619631773:role/sns25cf57f6154218-dev",
         "UserPoolId": "us-west-2_YS2tpxVx5",
@@ -191,7 +191,7 @@
         "GraphQLAPIEndpointOutput": "https://4vhvb2meojc7pa4a24swan2qky.appsync-api.us-west-2.amazonaws.com/graphql",
         "GraphQLAPIKeyOutput": "da2-mvssh3m3rbgl7fcasutmvezwai"
       },
-      "lastPushTimeStamp": "2021-11-22T03:00:36.310Z",
+      "lastPushTimeStamp": "2021-11-22T05:55:18.769Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-gcv8zcm-dev-154218-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apigcv8zcm"

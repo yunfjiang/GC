@@ -19,19 +19,19 @@ class UserData : ObservableObject {
 class GiftCard : Identifiable, ObservableObject {
     var id : String
     var name : String
-    var balance : String
+    var Balance : String
     var imageName : String?
     @Published var image : Image?
 
-    init(id: String, name: String, balance: String, image: String? = nil ) {
+    init(id: String, name: String, Balance: String, image: String? = nil ) {
         self.id = id
         self.name = name
-        self.balance = balance
+        self.Balance = Balance
         self.imageName = image
     }
     
     convenience init(from data: CardData) {
-        self.init(id: data.id, name: data.name, balance: data.balance, image: data.image)
+        self.init(id: data.id, name: data.name, Balance: data.Balance, image: data.image)
      
         // store API object for easy retrieval later
         self._data = data
@@ -45,7 +45,7 @@ class GiftCard : Identifiable, ObservableObject {
         if (_data == nil) {
             _data = CardData(id: self.id,
                              name: self.name,
-                             balance: self.balance,
+                             Balance: self.Balance,
                              image: self.imageName)
         }
 
@@ -72,7 +72,7 @@ struct ListRow: View {
                 Text(card.name)
                 .bold()
 
-                Text(card.balance)
+                Text(card.Balance)
         
             }
         }
@@ -85,7 +85,7 @@ struct ContentView: View {
     @State var showCreateCard = false
 
     @State var name : String        = "New Gift Card"
-    @State var description : String = "balance:"
+    @State var Balance : String = "Balance:"
     @State var image : String       = "image"
     @ObservedObject private var userData: UserData = .shared
     var body: some View {
@@ -106,7 +106,14 @@ struct ContentView: View {
                             }
                         }                    }
                     .navigationBarTitle(Text("My Gift Cards"))
-                    .navigationBarItems(leading: SignOutButton())
+                    .navigationBarItems(leading: SignOutButton(),
+                                        trailing: Button(action: {
+                            self.showCreateCard.toggle()
+                        }) {
+                            Image(systemName: "plus")
+                        })
+                    }.sheet(isPresented: $showCreateCard) {
+                        AddCardView(isPresented: self.$showCreateCard, userData: self.userData)
                 }
             } else {
                 SignInButton()
@@ -156,14 +163,14 @@ struct AddCardView: View {
     var userData: UserData
 
     @State var name : String        = "New Gift Card"
-    @State var balance : String = "This is a new card"
+    @State var Balance : String = "This is a new card"
     @State var image : String       = "image"
     var body: some View {
         Form {
 
             Section(header: Text("TEXT")) {
                 TextField("Name", text: $name)
-                TextField("Name", text: $balance)
+                TextField("Name", text: $Balance)
             }
 
             Section(header: Text("PICTURE")) {
@@ -175,7 +182,7 @@ struct AddCardView: View {
                     self.isPresented = false
                     let noteData = CardData(id : UUID().uuidString,
                                             name: self.$name.wrappedValue,
-                                            balance: self.$balance.wrappedValue)
+                                            Balance: self.$Balance.wrappedValue)
                     let card = GiftCard(from: noteData)
 
                     // asynchronously store the note (and assume it will succeed)
@@ -195,10 +202,10 @@ struct AddCardView: View {
 func prepareTestData() -> UserData {
     let userData = UserData.shared
     userData.isSignedIn = true
-    let desc = "balance: 50 dollars"
+    let desc = "Balance: 50 dollars"
 
-    let n1 = GiftCard(id: "01", name: "Macy's", balance: desc, image: "mic")
-    let n2 = GiftCard(id: "02", name: "Walmart", balance: desc, image: "phone")
+    let n1 = GiftCard(id: "01", name: "Macy's", Balance: desc, image: "mic")
+    let n2 = GiftCard(id: "02", name: "Walmart", Balance: desc, image: "phone")
 
     n1.image = Image(systemName: n1.imageName!)
     n2.image = Image(systemName: n2.imageName!)

@@ -7,7 +7,7 @@ extension CardData {
    public enum CodingKeys: String, ModelKey {
     case id
     case name
-    case balance
+    case Balance
     case image
     case createdAt
     case updatedAt
@@ -28,7 +28,7 @@ extension CardData {
     model.fields(
       .id(),
       .field(cardData.name, is: .required, ofType: .string),
-      .field(cardData.balance, is: .required, ofType: .string),
+      .field(cardData.Balance, is: .required, ofType: .string),
       .field(cardData.image, is: .optional, ofType: .string),
       .field(cardData.createdAt, is: .optional, isReadOnly: true, ofType: .dateTime),
       .field(cardData.updatedAt, is: .optional, isReadOnly: true, ofType: .dateTime)

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "55D9D807-09B4-46F4-918B-56D5E200D16C"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "42C17F11-CA0F-4DBD-B50D-24AE7DA33D14"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "ContentView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "42C17F11-CA0F-4DBD-B50D-24AE7DA33D14 - 327170e596ffc22d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GC.ContentView.init(showCreateCard: Swift.Bool, name: Swift.String, description: Swift.String, image: Swift.String) -&gt; GC.ContentView"
+                  moduleName = "GC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yunfanjiang/Documents/GitHub/gc/Shared/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "42C17F11-CA0F-4DBD-B50D-24AE7DA33D14 - 143987fc6e520d12"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GC.ContentView.init() -&gt; GC.ContentView"
+                  moduleName = "GC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yunfanjiang/Documents/GitHub/gc/Shared/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "73">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

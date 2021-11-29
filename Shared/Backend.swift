@@ -68,7 +68,18 @@ class Backend {
 
     // signin with Cognito web user interface
     public func signIn() {
-
+        
+        //Amplify.Auth.currentSession()
+        // let's check if user is signedIn or not
+         _ = Amplify.Auth.signOut() { (result) in
+             switch result {
+             case .success:
+                 print("Successfully signed out")
+             case .failure(let error):
+                 print("Sign out failed with error \(error)")
+             }
+         }
+             
         _ = Amplify.Auth.signInWithWebUI(presentationAnchor: UIApplication.shared.windows.first!) { result in
             switch result {
             case .success(_):
